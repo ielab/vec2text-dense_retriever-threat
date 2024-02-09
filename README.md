@@ -1,3 +1,3 @@
-# Is Vec2Text Really a Threat toDense Retrieval Systems?
+# Is Vec2Text Really a Threat to Dense Retrieval Systems?
 
 
