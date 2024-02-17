@@ -57,21 +57,3 @@ eval_results = trainer.evaluate(
 for key in ['eval_bleu_score', 'eval_token_set_f1', 'eval_exact_match', 'eval_emb_cos_sim']:
     print(key, eval_results[key])
 
-'''
-jxm/gtr__nq__32__correct
-/scratch/project/neural_ir/arvin/vec2text-reproduce/saves/corrector/gtr_base-corrector
-/scratch/project/neural_ir/arvin/vec2text-reproduce/saves/corrector/gtr_base_st-corrector
-/scratch/project/neural_ir/arvin/vec2text-reproduce/saves/corrector/nq/dim_768
-/scratch/project/neural_ir/arvin/vec2text-reproduce/saves/corrector/nq/dim_768_norm
-/scratch/project/neural_ir/arvin/vec2text-reproduce/saves/corrector/nq/dim_768_norm_mean
-/scratch/project/neural_ir/arvin/vec2text-reproduce/saves/corrector/nq/dim_768_pq_m768
-/scratch/project/neural_ir/arvin/vec2text-reproduce/saves/corrector/nq/dim_768_pq_m256
-/scratch/project/neural_ir/arvin/vec2text-reproduce/saves/corrector/nq/dim_256
-
-python3 eval_v2t.py \
---model_dir /scratch/project/neural_ir/arvin/vec2text-reproduce/saves/corrector/nq/dim_768 \
---batch_size 16 \
---steps 50 \
---beam_width 4
-
-'''
