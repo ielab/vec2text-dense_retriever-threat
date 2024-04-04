@@ -1,5 +1,5 @@
 # Is Vec2Text Really a Threat to Dense Retrieval Systems?
-
+The official repository for the paper [Understanding and Mitigating the Threat of Vec2Text to Dense Retrieval Systems](https://arxiv.org/abs/2402.12784)
 
 ## Installation
 ```bash
