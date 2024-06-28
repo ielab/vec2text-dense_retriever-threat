@@ -31,6 +31,7 @@ trainer.inversion_trainer.call_embedding_model = trainer.inversion_trainer.model
 trainer.args.per_device_eval_batch_size = args.batch_size
 trainer.sequence_beam_width = args.beam_width
 trainer.num_gen_recursive_steps = args.steps
+trainer.return_best_hypothesis = True
 experiment.data_args.max_eval_samples = 1000
 
 # model config, we close all the parameters during training. Eval everything on the fly

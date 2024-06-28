@@ -181,7 +181,7 @@ python3 eval_v2t.py \
 --model_dir ./saves/correcotr/${embedder} \
 --batch_size 16 \
 --steps 50 \
---beam_width 4 \
+--beam_width 8 \
 
 # Add the following configs for other experiments
 # add noise to embeddings, default no noise: --noise 0.0

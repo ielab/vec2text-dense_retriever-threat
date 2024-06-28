@@ -136,7 +136,7 @@ class InversionModel(transformers.PreTrainedModel):
         self.embedding_transform_strategy = "repeat"  # "none" # "repeat"
         self.embeddings_from_layer_n = embeddings_from_layer_n
         self.training_embedding_noise_level = training_embedding_noise_level
-        self.eva_embedding_noise_level = None
+        self.eval_embedding_noise_level = None
         print(f"Inversion encoder noise level {self.training_embedding_noise_level}")
 
     def _freeze_encoder(self):

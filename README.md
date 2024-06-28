@@ -1,5 +1,4 @@
 # Is Vec2Text Really a Threat to Dense Retrieval Systems?
-The official repository for the paper [Understanding and Mitigating the Threat of Vec2Text to Dense Retrieval Systems](https://arxiv.org/abs/2402.12784)
 
 ## Installation
 ```bash
@@ -74,7 +73,7 @@ python3 eval_v2t.py \
 --model_dir ./saves/corrector/gtr_base_st-corrector \
 --batch_size 16 \
 --steps 50 \
---beam_width 4
+--beam_width 8
 ```
 
 ### Evaluate Retrieval
