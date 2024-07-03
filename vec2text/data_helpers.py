@@ -4,7 +4,7 @@ import random
 from typing import Dict, List
 
 import datasets
-# from datasets import Dataset, concatenate_datasets
+from datasets import Dataset
 import torch
 
 from vec2text.run_args import DataArguments
@@ -23,6 +23,18 @@ def retain_dataset_columns(
 
 def load_nq_dpr_corpus() -> datasets.Dataset:
     pass_dataset = datasets.load_dataset("jxm/nq_corpus_dpr")
+
+    # filter out the dev set from the train set
+    train_set = set(pass_dataset['train']['text'])
+    dev_set = set(pass_dataset['dev']['text'])
+    print("overlapped train and dev for nq:", len(train_set & dev_set) / len(dev_set))
+    dev_set_no_overlap = list(dev_set.difference(train_set))
+    dev_set_no_overlap = datasets.Dataset.from_dict({'text': dev_set_no_overlap})
+    pass_dataset["dev"] = dev_set_no_overlap
+
+    train_set = set(pass_dataset['train']['text'])
+    dev_set = set(pass_dataset['dev']['text'])
+    print("overlapped train and dev for nq after filter:", len(train_set & dev_set) / len(dev_set))
 
     # NOTE: this is not from the original code repo, comment out for now
     # url = "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/nq-train.zip"
