@@ -192,7 +192,7 @@ def load_beir_corpus(name: str) -> List[str]:
     from beir.datasets.data_loader import GenericDataLoader
 
     #### Download scifact.zip dataset and unzip the dataset
-    beir_datasets_cache_dir = "/home/jxm3/research/retrieval/distractor_exp"
+    beir_datasets_cache_dir = "beir_cache"
 
     url = "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/{}.zip".format(
         name
@@ -266,17 +266,17 @@ def load_beir_datasets() -> datasets.DatasetDict:
         "hotpotqa",
         "msmarco",
         "nfcorpus",
-        "nq",
-        "quora",
+        # "nq",
+        # "quora",
         "scidocs",
         "scifact",
         "trec-covid",
-        "webis-touche2020",
+        # "webis-touche2020",
         ####### private datasets #######
-        "signal1m",
-        "trec-news",
-        "robust04",
-        "bioasq",
+        # "signal1m",
+        # "trec-news",
+        # "robust04",
+        # "bioasq",
     ]
     return datasets.DatasetDict({k: load_beir_dataset(k) for k in all_beir_datasets})
 

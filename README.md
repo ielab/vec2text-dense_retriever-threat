@@ -1,4 +1,5 @@
 # Is Vec2Text Really a Threat to Dense Retrieval Systems?
+> Update: Our paper [Understanding and Mitigating the Threat of Vec2Text to Dense Retrieval Systems](https://arxiv.org/pdf/2402.12784) has been accepted to SIGIR-AP 2024!
 
 ## Installation
 ```bash
@@ -136,3 +137,36 @@ python -m pyserini.eval.evaluate_dpr_retrieval \
 - DPR experiments: [experiment_dpr.sh](experiment_dpr.sh)
 - DPR with different pooling methods experiments: [experiment_dpr_pooling.sh](experiment_dpr_pooling.sh)
 - DPR with product quantization experiments: [experiment_dpr_pq.sh](experiment_dpr_pq.sh)
+
+
+### Appendix
+Results of reproduced model checkpoint (On Huggingface [ielabgroup/vec2text_gtr-base-st_corrector](https://huggingface.co/ielabgroup/vec2text_gtr-base-st_corrector)) on BEIR datasets:
+```bash
+python3 eval_v2t_beir.py \  
+--model_dir ielabgroup/vec2text_gtr-base-st_corrector \
+--batch_size 16 \
+--steps 50 \
+--beam_width 8
+```
+
+| Dataset    | bleu | tf1  | exact | cos  |
+|------------|------|------|-------|------|
+| nq         | 97.9 | 99.4 | 94.0  | 1.00 |
+| nfcorpus   | 92.8 | 97.0 | 75.4  | 99.8 |
+| scidocs    | 92.1 | 97.6 | 81.9  | 99.7 |
+| scifact    | 93.4 | 97.2 | 81.7  | 99.9 |
+| trec-covid | 91.6 | 96.2 | 65.1  | 1.00 |
+
+### Citation
+If you find this repository helpful, please consider citing our paper:
+```bibtext
+@misc{zhuang2024understandingmitigatingthreatvec2text,
+      title={Understanding and Mitigating the Threat of Vec2Text to Dense Retrieval Systems}, 
+      author={Shengyao Zhuang and Bevan Koopman and Xiaoran Chu and Guido Zuccon},
+      year={2024},
+      eprint={2402.12784},
+      archivePrefix={arXiv},
+      primaryClass={cs.IR},
+      url={https://arxiv.org/abs/2402.12784}, 
+}
+```
